@@ -10,7 +10,7 @@ variable "cert_manager_version" {
     description = "override cert-manager Helm chart version"
 }
 
-variable "ingress_class_name" {
+variable "ingress_class" {
     type        = string
     default     = null
     description = "ingress class name for ACME HTTP01 solver"

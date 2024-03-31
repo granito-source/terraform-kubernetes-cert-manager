@@ -1,6 +1,6 @@
 locals {
     create_issuers = var.acme_email != null
-    ingress_class  = var.ingress_class_name == null ? "null" : var.ingress_class_name
+    ingress_class  = var.ingress_class == null ? "null" : var.ingress_class
 }
 
 resource "kubectl_manifest" "lets_encrypt_staging" {
