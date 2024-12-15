@@ -10,6 +10,12 @@ variable "cert_manager_version" {
     description = "override cert-manager Helm chart version"
 }
 
+variable "replicas" {
+    type        = number
+    default     = 1
+    description = "the number of replicas of the cert-manager controller to run"
+}
+
 variable "ingress_class" {
     type        = string
     default     = null

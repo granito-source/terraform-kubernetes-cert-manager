@@ -12,7 +12,12 @@ resource "helm_release" "cert_manager" {
     version    = var.cert_manager_version
     values     = [
         <<-EOT
-        installCRDs: true
+        crds:
+          enabled: true
+          keep: true
+        replicaCount: ${var.replicas}
+        podDisruptionBudget:
+            enabled: ${var.replicas > 1 ? "true" : "false"}
         EOT
     ]
 }
