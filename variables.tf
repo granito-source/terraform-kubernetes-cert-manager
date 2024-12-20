@@ -10,6 +10,12 @@ variable "cert_manager_version" {
     description = "override cert-manager Helm chart version"
 }
 
+variable "keep_crds" {
+    type        = bool
+    default     = true
+    description = "control the retention of the CRDs after the removal of the chart"
+}
+
 variable "replicas" {
     type        = number
     default     = 1

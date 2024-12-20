@@ -14,7 +14,7 @@ resource "helm_release" "cert_manager" {
         <<-EOT
         crds:
           enabled: true
-          keep: true
+          keep: ${var.keep_crds}
         replicaCount: ${var.replicas}
         podDisruptionBudget:
             enabled: ${var.replicas > 1 ? "true" : "false"}
